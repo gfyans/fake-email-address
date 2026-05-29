@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake Email Filler — Settings</title>
+  <style>
+    body { font-family: sans-serif; padding: 24px; max-width: 480px; }
+    label { display: block; margin-bottom: 8px; font-weight: 500; }
+    input[type="text"] { width: 100%; padding: 8px; font-size: 14px; box-sizing: border-box; }
+    button { margin-top: 12px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
+    .hint { margin-top: 8px; font-size: 12px; color: #666; }
+    .saved { color: green; font-size: 13px; margin-top: 8px; display: none; }
+  </style>
+</head>
+<body>
+  <h2>Fake Email Filler</h2>
+  <label for="format">Email format</label>
+  <input type="text" id="format" placeholder="e.g. gregfyans+{unique-id}@gmail.com" />
+  <p class="hint">
+    Use <code>{unique-id}</code> where you want the timestamp (e.g. <code>YYYYMMDDHHmmss</code>).<br>
+    Leave blank to fall back to <code>test@test.com</code>.
+  </p>
+  <button id="save">Save</button>
+  <p class="saved" id="saved-msg">Saved.</p>
+
+  <script src="options.js"></script>
+</body>
+</html>

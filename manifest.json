@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Fake Email Filler",
+  "version": "1.0",
+  "description": "Right-click any input field to insert a fake email address.",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
