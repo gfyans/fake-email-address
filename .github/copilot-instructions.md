@@ -6,13 +6,15 @@ A Chrome extension (Manifest V3) that adds a right-click context menu item to an
 
 ## Architecture
 
+All extension source files live in the `src/` folder. Load unpacked from `src/`, and zip `src/` for store submission.
+
 | File | Role |
 |------|------|
-| `manifest.json` | MV3 manifest — declares permissions, background service worker, options page, and content script |
-| `background.js` | Service worker — registers the context menu, handles clicks, generates the email, and messages the content script |
-| `content.js` | Content script — tracks the last focused input, receives messages, and injects the email value in a framework-compatible way |
-| `options.html` | Settings UI — lets the user configure the email format |
-| `options.js` | Options page logic — loads/saves the format to `chrome.storage.sync` |
+| `src/manifest.json` | MV3 manifest — declares permissions, background service worker, options page, and content script |
+| `src/background.js` | Service worker — registers the context menu, handles clicks, generates the email, and messages the content script |
+| `src/content.js` | Content script — tracks the last focused input, receives messages, and injects the email value in a framework-compatible way |
+| `src/options.html` | Settings UI — lets the user configure the email format |
+| `src/options.js` | Options page logic — loads/saves the format to `chrome.storage.sync` |
 
 ## Key Behaviours
 
@@ -21,6 +23,12 @@ A Chrome extension (Manifest V3) that adds a right-click context menu item to an
 - **Storage**: The user's chosen format is persisted in `chrome.storage.sync` under the key `"format"`. Sync storage means it roams across the user's Chrome profiles.
 - **Framework-compatible filling**: The content script sets `input.value` via the native `HTMLInputElement.prototype.value` setter (not a direct property assignment) and then dispatches `input` and `change` events with `bubbles: true`. This ensures React, Vue, and Angular detect the change correctly.
 - **Focus tracking**: `content.js` listens for `focus` events in capture phase to remember the last focused non-button/non-checkbox input, because by the time the context menu click is processed the field may have lost focus.
+
+## Working Conventions
+
+- **Read `README.md` first.** Before making any changes, read `README.md` to understand the current state of the project, its features, and the roadmap.
+- **Update `README.md` after changes.** After implementing any change — new feature, restructure, new placeholder, etc. — update `README.md` to reflect it. Keep the Features list, Project Structure, Configuration docs, and Roadmap checkboxes accurate.
+- **Be honest about uncertainty.** Do not hallucinate API behaviour, browser support, or Chrome extension specifics. If something is unclear or unknown, say so and ask the user to clarify or provide the relevant information rather than guessing.
 
 ## Conventions & Rules
 
