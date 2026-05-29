@@ -26,8 +26,8 @@ All extension source files live in the `src/` folder. Load unpacked from `src/`,
 
 ## Working Conventions
 
-- **Read `README.md` first.** Before making any changes, read `README.md` to understand the current state of the project, its features, and the roadmap.
-- **Update `README.md` after changes.** After implementing any change — new feature, restructure, new placeholder, etc. — update `README.md` to reflect it. Keep the Features list, Project Structure, Configuration docs, and Roadmap checkboxes accurate.
+- **REQUIRED: Read `README.md` before touching any file.** This is mandatory for every request, no exceptions. Do not read source files or make any changes until `README.md` has been read in full.
+- **REQUIRED: Update `README.md` after changes.** After implementing any change — new feature, restructure, new placeholder, etc. — update `README.md` to reflect it. Keep the Features list, Project Structure, Configuration docs, and Roadmap checkboxes accurate. This is mandatory, not optional.
 - **Be honest about uncertainty.** Do not hallucinate API behaviour, browser support, or Chrome extension specifics. If something is unclear or unknown, say so and ask the user to clarify or provide the relevant information rather than guessing.
 
 ## Conventions & Rules

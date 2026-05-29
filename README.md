@@ -8,8 +8,8 @@ Built for developers and QA testers who repeatedly fill email fields during test
 
 ## Features
 
-- Right-click any text input → **Insert fake email address**
-- Configurable email format via the extension's options page
+- Right-click any text input → **Insert fake email address** or **Insert fake phone number**
+- Configurable email format and phone number via the extension's options page
 - `{unique-id}` placeholder is replaced with a `YYYYMMDDHHmmss` timestamp, so every generated address is unique
 - Works with React, Vue, and Angular (uses the native input setter + dispatches `input`/`change` events)
 - No build step or dependencies — plain vanilla JS
@@ -25,11 +25,11 @@ Since this extension is not published to the Chrome Web Store, install it in dev
 
 ## Usage
 
-1. Focus any email/text input on a page
+1. Focus any text input on a page
 2. Right-click the input
-3. Select **Insert fake email address** from the context menu
+3. Select **Insert fake email address** or **Insert fake phone number** from the context menu
 
-The field will be filled with your configured email format.
+The field will be filled with your configured value.
 
 ## Configuration
 
@@ -50,6 +50,12 @@ Open the extension's options page to customise the email format:
 The `{unique-id}` placeholder is replaced with the current timestamp (`YYYYMMDDHHmmss`) at the moment the menu item is clicked. If your format contains no placeholder, the string is used verbatim every time.
 
 The default format is `test@test.com`.
+
+### Phone number
+
+Enter any phone number string (digits, spaces, or symbols — whatever your target field accepts). The value is used verbatim.
+
+The default is `07111222333`.
 
 ## Project Structure
 
